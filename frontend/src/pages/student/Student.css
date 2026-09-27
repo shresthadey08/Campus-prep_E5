@@ -1,0 +1,211 @@
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.stat-value {
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.stat-link {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Sub-navigation tabs used by CV and Jobs sections */
+.subnav {
+  display: flex;
+  gap: 6px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.subnav-link {
+  padding: 10px 16px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.subnav-link:hover {
+  color: var(--text);
+}
+
+.subnav-link.active {
+  color: var(--text);
+  border-bottom-color: var(--border-strong);
+}
+
+/* Job cards */
+.job-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.job-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.job-title {
+  font-weight: 700;
+  font-size: 1.02rem;
+  margin: 0;
+}
+
+.job-meta {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 2px 0 0 0;
+}
+
+.job-desc {
+  font-size: 0.87rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.job-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.match-percent {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* CV file row */
+.file-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-alt);
+  font-size: 0.87rem;
+}
+
+.pdf-preview-frame {
+  width: 100%;
+  height: 520px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-top: 14px;
+}
+
+/* CV Preview */
+.cv-preview-section {
+  margin-bottom: 20px;
+}
+
+.cv-preview-section h3 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+
+.cv-entry {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.cv-entry-title {
+  font-weight: 700;
+}
+
+.cv-entry-sub {
+  color: var(--text-muted);
+  font-size: 0.83rem;
+}
+
+/* Repeatable form sections (education, projects, experience) */
+.repeatable-block {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.repeatable-block-remove {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 28px 0 12px 0;
+}
+
+.section-heading h2 {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+/* Applications table */
+.applications-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.applications-table th,
+.applications-table td {
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.applications-table th {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* Modules */
+.module-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.module-mentor {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Skills list display */
+.skills-list {
+  margin-top: 8px;
+}
