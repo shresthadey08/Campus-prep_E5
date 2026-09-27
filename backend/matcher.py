@@ -7,16 +7,11 @@ SKILLS_LIST = [
 
 
 def extract_skills_from_cv(cv_text):
-    """Return the list of skills from SKILLS_LIST that appear in cv_text."""
     resume_lower = cv_text.lower()
     return [skill for skill in SKILLS_LIST if skill.lower() in resume_lower]
 
 
 def match_cv_to_jd(cv_text, jd_skills):
-    """
-    Match a CV against a job's required skills.
-    This is friend's logic, wrapped into one function.
-    """
     found_skills = extract_skills_from_cv(cv_text)
     found_lower = [s.lower() for s in found_skills]
 

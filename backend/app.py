@@ -9,6 +9,7 @@ from flask_cors import CORS
 from models import db, User, Company, Job, Module, CVUpload, Match
 from cv_parser import extract_text
 from matcher import match_cv_to_jd
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
 app = Flask(__name__)
@@ -43,7 +44,6 @@ def module_to_dict(module):
         "file_path": module.file_path or "",
     }
 
-
 @app.route("/health", methods=["GET"])
 def health():
     return jsonify({"status": "ok"})
@@ -56,16 +56,51 @@ def login():
     password = data.get("password", "")
 
     user = User.query.filter_by(email=email).first()
-    if not user or user.password_hash != password:
+    if not user or not check_password_hash(user.password_hash, password):
         return jsonify({"error": "Invalid credentials"}), 401
 
     return jsonify({"id": user.id, "name": user.name, "role": user.role})
 
+@app.route("/register", methods=["POST"])
+def register():
+    data = request.get_json() or {}
+
+    name = data.get("name", "").strip()
+    email = data.get("email", "").strip().lower()
+    password = data.get("password", "")
+    role = data.get("role", "student").strip().lower()
+
+    if not name or not email or not password:
+        return jsonify({"error": "Name, email, and password are required"}), 400
+
+    if role not in ["student", "mentor", "admin"]:
+        return jsonify({"error": "Invalid role"}), 400
+
+    if len(password) < 4:
+        return jsonify({"error": "Password must be at least 4 characters"}), 400
+
+    if User.query.filter_by(email=email).first():
+        return jsonify({"error": "Email already registered"}), 409
+
+    user = User(
+        name=name,
+        email=email,
+        password_hash=generate_password_hash(password),
+        role=role,
+    )
+    db.session.add(user)
+    db.session.commit()
+
+    return jsonify({
+        "id": user.id,
+        "name": user.name,
+        "email": user.email,
+        "role": user.role,
+    }), 201
 
 @app.route("/jobs", methods=["GET"])
 def list_jobs():
     return jsonify([job_to_dict(j) for j in Job.query.all()])
-
 
 @app.route("/jobs", methods=["POST"])
 def add_job():
@@ -108,7 +143,6 @@ def add_module():
     db.session.add(module)
     db.session.commit()
     return jsonify(module_to_dict(module)), 201
-
 
 @app.route("/upload-cv", methods=["POST"])
 def upload_cv():
@@ -185,7 +219,6 @@ def upload_cv():
         "missing_skills": sorted(all_missing),
         "recommended_modules": recommended_modules,
     })
-
 
 if __name__ == "__main__":
     with app.app_context():
