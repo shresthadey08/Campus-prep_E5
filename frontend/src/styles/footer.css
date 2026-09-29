@@ -1,0 +1,29 @@
+.site-footer {
+    border-top: 1px solid var(--border);
+    margin-top: 60px;
+    padding: 24px 32px;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-note {
+    margin: 0;
+    font-size: 13px;
+    color: var(--text-faint);
+}

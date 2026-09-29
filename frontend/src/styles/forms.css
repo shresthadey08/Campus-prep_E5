@@ -1,0 +1,57 @@
+/* ---------- forms ---------- */
+.field {
+  margin-bottom: 12px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+input {
+  width: 100%;
+  padding: 9px 10px;
+  font-size: 15px;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--text);
+}
+
+input[type="file"] {
+  border: none;
+  padding: 0;
+  margin-bottom: 12px;
+  background: transparent;
+}
+
+button {
+  padding: 9px 18px;
+  font-size: 15px;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.message {
+  margin: 12px 0 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.message.error {
+  color: var(--error);
+}

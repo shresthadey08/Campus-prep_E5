@@ -1,0 +1,65 @@
+/* ---------- layout ---------- */
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.welcome {
+  text-align: center;
+  padding-top: 80px;
+}
+
+.welcome p {
+  color: var(--text-muted);
+}
+
+/* ---------- panels ---------- */
+.panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.label {
+  display: block;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.hint {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin: 0 0 12px;
+}
+
+
+/* ---------- sticky footer: footer always at the bottom ---------- */
+.app-shell {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  /* navbar | content | footer */
+  min-height: 100vh;
+}
+
+.main-content {
+  min-width: 0;
+}
+
+.main-content>.auth-page {
+  min-height: 100%;
+}
+
+/* ---------- single-page smooth scrolling ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 90px;
+  /* keeps headings clear of the sticky navbar */
+}

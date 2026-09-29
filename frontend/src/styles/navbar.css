@@ -1,0 +1,96 @@
+/* ---------- navbar ---------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.nav-role {
+  font-size: 14px;
+  color: var(--text-muted);
+  text-transform: capitalize;
+}
+
+.nav-links a.nav-register {
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 6px;
+}
+
+.nav-links a.nav-register:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.theme-toggle {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--text);
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  opacity: 0.85;
+}
+
+/* ---------- logo: CampusPrep ---------- */
+.logo-campus {
+  color: #ffffff;
+  /* dark mode: white */
+}
+
+.logo-prep {
+  color: #22c55e;
+  /* green */
+}
+
+[data-theme="light"] .logo-campus {
+  color: #0a1f44;
+  /* light mode: navy blue */
+}
+
+[data-theme="light"] .logo-prep {
+  color: #16a34a;
+  /* slightly deeper green so it stays readable on white */
+}
+
+/* ---------- navbar stays visible while scrolling ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}

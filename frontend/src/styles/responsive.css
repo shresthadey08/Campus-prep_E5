@@ -1,0 +1,20 @@
+/* ---------- small screens ---------- */
+@media (max-width: 800px) {
+
+  .ats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary,
+  .results {
+    grid-template-columns: 1fr;
+  }
+
+  .job-row {
+    grid-template-columns: 120px 1fr 45px;
+  }
+
+  .navbar {
+    padding: 12px 16px;
+  }
+}
