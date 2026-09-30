@@ -1,0 +1,321 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  color: #222;
+  background: #fff;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 12px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-bottom: 1px solid #e5e5e5;
+  background: #fff;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: #4a4a8a;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.nav-role {
+  font-size: 14px;
+  color: #666;
+  text-transform: capitalize;
+}
+
+.nav-links a.nav-register {
+  background: #4a4a8a;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 6px;
+}
+
+.nav-links a.nav-register:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.welcome {
+  text-align: center;
+  padding-top: 80px;
+}
+
+.welcome p {
+  color: #666;
+}
+
+.panel {
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.label {
+  display: block;
+  color: #666;
+  font-size: 14px;
+}
+
+.hint {
+  color: #666;
+  font-size: 14px;
+  margin: 0 0 12px;
+}
+
+.field {
+  margin-bottom: 12px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: #444;
+}
+
+input {
+  width: 100%;
+  padding: 9px 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+}
+
+input[type="file"] {
+  border: none;
+  padding: 0;
+  margin-bottom: 12px;
+  background: transparent;
+}
+
+button {
+  padding: 9px 18px;
+  font-size: 15px;
+  color: #fff;
+  background: #4a4a8a;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.message {
+  margin: 12px 0 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.message.error {
+  color: #b00020;
+}
+
+.auth-box {
+  width: 100%;
+  max-width: 380px;
+  margin: 60px auto;
+  padding: 24px;
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+}
+
+.auth-box button {
+  width: 100%;
+}
+
+.switch {
+  margin: 16px 0 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.switch a {
+  color: #4a4a8a;
+}
+
+.upload-box {
+  max-width: 520px;
+  margin: 40px auto;
+  width: 100%;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.big {
+  display: block;
+  font-size: 34px;
+  line-height: 1.2;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.job-row {
+  display: grid;
+  grid-template-columns: 170px 1fr 50px;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.job-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bar {
+  height: 12px;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: #4a78a8;
+  border-radius: 6px;
+}
+
+.job-row:first-of-type .bar-fill {
+  background: #f5871f;
+}
+
+.job-score {
+  text-align: right;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 6px 12px;
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+}
+
+.module {
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.module:last-child {
+  border-bottom: none;
+}
+
+.preview {
+  margin: 0;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+table {
+  width: 100%;
+  margin-top: 12px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 15px;
+}
+
+th {
+  color: #666;
+  font-weight: 600;
+}
+
+@media (max-width: 800px) {
+
+  .summary,
+  .results {
+    grid-template-columns: 1fr;
+  }
+
+  .job-row {
+    grid-template-columns: 120px 1fr 45px;
+  }
+
+  .navbar {
+    padding: 12px 16px;
+  }
+}

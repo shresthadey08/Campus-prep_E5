@@ -1,0 +1,134 @@
+.landing-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.landing-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.landing-badge {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--accent);
+    margin-bottom: 16px;
+}
+
+.landing-title {
+    font-size: 42px;
+    line-height: 1.2;
+    margin: 0 0 16px;
+    color: var(--text);
+}
+
+.landing-title .accent {
+    color: var(--accent);
+}
+
+.landing-subtitle {
+    font-size: 18px;
+    color: var(--text);
+    margin: 0 0 12px;
+}
+
+.landing-desc {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0 0 28px;
+    max-width: 460px;
+}
+
+.landing-cta {
+    margin-top: 40px;
+    padding: 14px 32px;
+    font-size: 16px;
+}
+
+.landing-graphic {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    justify-content: center;
+    order: -1;
+}
+
+.mock-window {
+    width: 100%;
+    max-width: 420px;
+    background: var(--panel-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.mock-bar {
+    display: flex;
+    gap: 6px;
+    padding: 10px 14px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+}
+
+.mock-bar span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border);
+}
+
+.mock-body {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.mock-card {
+    height: 70px;
+    border-radius: 8px;
+    background: var(--accent-2);
+}
+
+.mock-card:first-child {
+    background: var(--accent);
+}
+
+.mock-card.wide {
+    grid-column: span 2;
+    height: 90px;
+    background: var(--accent);
+}
+
+@media (max-width: 700px) {
+    .landing {
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+    }
+
+    .landing-wrap {
+        padding: 40px 20px;
+    }
+
+    .landing-desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
