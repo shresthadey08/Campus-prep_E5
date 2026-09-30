@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { request } from "./helpers.jsx";
 
-export default function Student({ token, onResult, initialResult = null }) {
+export default function Student({ token, result, onResult }) {
     const [file, setFile] = useState(null);
-    const [result, setResult] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
@@ -35,7 +34,7 @@ export default function Student({ token, onResult, initialResult = null }) {
                 { method: "POST", body: formData },
                 token
             );
-            setResult(data);
+            setFile(null);
             if (onResult) onResult(data);
         } catch (err) {
             setError(err.message);
@@ -48,7 +47,6 @@ export default function Student({ token, onResult, initialResult = null }) {
         setError("");
     }
 
-    // ---------- Step 1: upload ----------
     if (!result) {
         return (
             <div className="page">
@@ -128,7 +126,6 @@ export default function Student({ token, onResult, initialResult = null }) {
         );
     }
 
-    // ---------- Step 2: results ----------
     const jobs = result.recommended_jobs || [];
     const skills = result.missing_skills || [];
     const modules = result.recommended_modules || [];

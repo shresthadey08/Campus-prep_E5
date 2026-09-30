@@ -17,31 +17,18 @@ export default function Dashboard({
     return (
         <div className="student-dashboard">
 
-            {/* =========================================
-                CV ANALYSIS
-                Contains:
-                - Your CV analysis
-                - roles ranked by skill overlap
-                - Overall CV match
-                - Recommended jobs
-                - Top match
-                - Role ranking
-                - Skills to develop
-                - Recommended learning
-               ========================================= */}
+            {/* CV ANALYSIS */}
 
             <section id="resume-analysis">
                 <Student
                     token={token}
+                    result={result}
                     onResult={onResult}
                 />
             </section>
 
 
-            {/* =========================================
-                SUGGESTED JOBS
-                Comes BEFORE Suggested Modules.
-               ========================================= */}
+            {/* SUGGESTED JOBS */}
 
             {result && (
                 <section id="suggested-jobs">
@@ -52,10 +39,7 @@ export default function Dashboard({
             )}
 
 
-            {/* =========================================
-                SUGGESTED MODULES
-                Comes AFTER Suggested Jobs.
-               ========================================= */}
+            {/* SUGGESTED MODULES */}
 
             {result && (
                 <section id="suggested-modules">
@@ -66,12 +50,7 @@ export default function Dashboard({
             )}
 
 
-            {/* =========================================
-                UPLOAD AGAIN
-                Final student-dashboard section.
-
-                CV Preview has intentionally been removed.
-               ========================================= */}
+            {/* UPLOAD AGAIN */}
 
             {result && (
                 <section

@@ -215,9 +215,7 @@ export default function Auth({ mode, onAuth, onSwitch }) {
                 </a>
             </p>
 
-            {/* =========================
-                DEMO CREDENTIALS
-               ========================= */}
+            {/* DEMO CREDENTIALS */}
             {isLogin && (
                 <div className="demo-credentials">
 

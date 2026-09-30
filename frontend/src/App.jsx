@@ -197,17 +197,16 @@ export default function App() {
           token={user.token}
           onResult={handleStudentResult}
           onAnalyze={() => {
-            // Return to the upload-resume screen and place the user at the top of it.
+            // Go back to the upload-resume screen (the first dashboard view).
+            // The page gets much shorter once the results are cleared, so wait
+            // for that render and then jump straight to the top instead of
+            // smooth-scrolling through a layout that is still changing.
             setLastResult(null);
-            setTimeout(() => {
-              const el = document.getElementById("resume-analysis");
-              if (el) {
-                el.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
-                });
-              }
-            }, 50);
+            requestAnimationFrame(() =>
+              requestAnimationFrame(() =>
+                window.scrollTo({ top: 0, behavior: "instant" })
+              )
+            );
           }}
         />
       );
